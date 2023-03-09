@@ -4,8 +4,8 @@
     <title>Akan Name Generator</title>
     <link rel="stylesheet" href="css/style.css" media="all">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap" rel="stylesheet">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=9">
 </head>
@@ -17,18 +17,32 @@
             <p>This is a website that takes your birthday information, determines the day of the week you were born, and
                 then outputs your Akan Name based on your gender. </p>
             <p>Fill out the form below, then click the name button to learn what your Akan name is.</p>
+            </br>
+            <form id="dob-gender-form" method="post" action="#" class="needs-validation" novalidate>
+                <div class="form-group">
+                    <label for="dob-input"><strong>Please select your date of birth:</strong></label>
+                    <div class="input-group">
+                        <input type="text" class="form-control" id="dob-input" name="dob"
+                            placeholder="Select your date of birth" required>
+                        <div class="input-group-append">
+                            <span class="input-group-text">
+                                <i class="fa fa-calendar"></i>
+                            </span>
+                        </div>
+                    </div>
+                </div>
 
-
-            <div class="form-group">
-                <label for="gender-input"><strong>Select your gender:</strong></label>
-                <select class="form-control" id="gender-input" name="gender" required>
-                    <option value="male">Male</option>
-                    <option value="female">Female</option>
-                </select>
-            </div>
-            <button type="submit" class="btn btn-primary">Submit</button>
+                <div class="form-group">
+                    <label for="gender-input"><strong>Select your gender:</strong></label>
+                    <select class="form-control" id="gender-input" name="gender" required>
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+                <button type="button" class="btn btn-secondary" id="clear-btn">Clear</button>
             </form>
-            <div id="dob-gender-output" class="mt-5"></div>
+            <div id="dob-gender-output" class="content"></div>
         </div>
     </div>
 
