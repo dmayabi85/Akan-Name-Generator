@@ -1,6 +1,8 @@
 body{
-    font-family: 'Quicksand', sans-serif;
+    font-family: 'Quicksand', sans-serif, fantasy;
     background-image: url('../images/ghana.jpg');
-    color: #ffffff;
-    font-size: 16px;
+    background-repeat: no-repeat;
+    background-size:cover , 150% ;
+    color: black;
+    font-size: 19px;
   }
