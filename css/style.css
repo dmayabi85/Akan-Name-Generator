@@ -1,8 +1,23 @@
 body{
-    font-family: 'Gill sans', sans-serif;
+    font-family: 'Raleway', sans-serif;
     background-image: url('../images/ghana.jpg');
     background-repeat: no-repeat;
     background-size:cover , 150% ;
     color: black;
     font-size: 19px;
+    font-weight: bold;
+  }
+  .content{
+    background-color: rgba(17, 206, 30, 0.72);
+    /* height: 600px; */
+    margin-left: 15%;
+    margin-right: 15%;
+    margin-top: 10px;
+    padding-bottom: 20px;
+    box-shadow: 2px 2px #000000;
+    border-radius: 10%;
+  }
+  .container{
+    width: 80%;
+    margin: auto;
   }
