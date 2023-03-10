@@ -60,7 +60,7 @@ function checkForm(form) {
 	 //creating arrays of Akan names for males,females and days 
 	const maleNames = ["Kwasi", "Kwadwo", "Kwabena", "Kwaku", "Yaw", "Kofi", "Kwame"];
 	const femaleNames = ["Akosua", "Adwoa", "Abenaa", "Akua", "Yaa", "Afua", "Ama"];
-	const dayNames =["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+
 	
 	//alert for female and males
 	var result;
@@ -71,6 +71,7 @@ function checkForm(form) {
 	} else {
 		alert('Enter a valid gender')
 }
+console.log (`Your day name is ${result}`)
 alert(`Your day name is ${result}`, )
 return true;
 }
