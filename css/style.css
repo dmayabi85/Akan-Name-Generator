@@ -1,6 +1,6 @@
 body{
     font-family: 'Raleway', sans-serif;
-    background-image: url('images/ghana.jpg');
+    background-image: url('/images/ghana.jpg;');
     background-repeat: no-repeat;
     background-size:cover , 150% ;
     color: black;
