@@ -71,7 +71,9 @@ function checkForm(form) {
 	} else {
 		alert('Enter a valid gender')
 }
+//document.getElementById("result").textContent = "Jibu";
+$('#result').html('Anything you want');
 console.log (`Your day name is ${result}`)
-alert(`Your day name is ${result}`, )
+//alert(`Your day name is ${result}`, )
 return true;
 }
