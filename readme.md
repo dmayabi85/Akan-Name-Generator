@@ -20,4 +20,4 @@ You can view the live site on GitHub Pages at: ‘https://dmayabi85.github.io/Ak
 ## Copyright and License:
 This project is licensed under MIT.
 
-**Copyright (c) 2019 Derek Mayabi**
+**Copyright (c) 2023 Derek Mayabi**
