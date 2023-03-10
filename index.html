@@ -1,7 +1,11 @@
 <!DOCTYPE html>
+<html>
 
 <head>
     <title>Akan Name Generator</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css">
     <link rel="stylesheet" href="css/style.css" media="all">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -18,32 +22,32 @@
                 then outputs your Akan Name based on your gender. </p>
             <p>Fill out the form below, then click the name button to learn what your Akan name is.</p>
             </br>
-            <form id="dob-gender-form" method="post" action="#" class="needs-validation" novalidate>
+            <form id="dob-gender-form" method="post" action="#" class="needs-validation" novalidate
+                onsubmit="return checkForm(this);">
                 <div class="form-group">
                     <label for="dob-input"><strong>Please select your date of birth:</strong></label>
                     <div class="input-group">
-                        <input type="text" class="form-control" id="dob-input" name="dob"
-                            placeholder="Select your date of birth" required>
-                        <div class="input-group-append">
-                            <span class="input-group-text">
-                                <i class="fa fa-calendar"></i>
-                            </span>
-                        </div>
+                        <input type="text" size="12" id="dob-input" required placeholder="DD/MM/YYYY" name="dob">
                     </div>
                 </div>
-
-                <div class="form-group">
-                    <label for="gender-input"><strong>Select your gender:</strong></label>
-                    <select class="form-control" id="gender-input" name="gender" required>
-                        <option value="male">Male</option>
-                        <option value="female">Female</option>
-                    </select>
-                </div>
-                <button type="submit" class="btn btn-primary">Submit</button>
-                <button type="button" class="btn btn-secondary" id="clear-btn">Clear</button>
-            </form>
-            <div id="dob-gender-output" class="content"></div>
         </div>
+        <div class="form-group">
+            <label for="gender-input"><strong>Select your gender:</strong></label>
+            <select class="form-control" id="gender" name="gender" required>
+                <option>Male</option>
+                <option>Female</option>
+            </select>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+        <button type="button" class="btn btn-secondary" id="clear-btn">Clear</button>
+        </form>
+
+        <div id="dob-gender-output" class="content"></div>
     </div>
-    <script scr="script/Script.js" ></script>
+    </div>
+
+    <script src="script/Script.js">
+    </script>
 </body>
+
+</html>

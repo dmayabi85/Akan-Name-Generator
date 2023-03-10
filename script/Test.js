@@ -1,3 +1,4 @@
+<script type="text/javascript">
 function checkForm(form) {
     // regular expression to match required date format
     re = /^(\d{1,2})\/(\d{1,2})\/(\d{4})$/;
@@ -17,8 +18,8 @@ function checkForm(form) {
                 return false;
             }
             // year value between 1902 and 2021
-            if (regs[4] > (new Date()).getFullYear()) {
-                alert("Invalid value for year, please enter a valid year: " + regs[4]);
+            if (regs[3] > (new Date()).getFullYear()) {
+                alert("Invalid value for year, please enter a valid year: " + regs[3]);
                 form.dob.focus();
                 return false;
             }
@@ -63,3 +64,4 @@ function checkForm(form) {
     alert(`Your day name is ${result}`,)
     return true;
 }
+</script>
