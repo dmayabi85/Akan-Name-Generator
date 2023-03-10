@@ -1,53 +1,38 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-    <title>Akan Name Generator</title>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css">
-    <link rel="stylesheet" href="css/style.css" media="all">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap" rel="stylesheet">
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=9">
+	<title>Akan Name Generator</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=8">
+	<link rel="stylesheet" href="css/style.css" media="all">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
 
 <body>
-    <div class="content">
-        <div class="container">
-            <h1>Akan name generator</h1>
-            <p>This is a website that takes your birthday information, determines the day of the week you were born, and
-                then outputs your Akan Name based on your gender. </p>
-            <p>Fill out the form below, then click the name button to learn what your Akan name is.</p>
-            </br>
-            <form id="dob-gender-form" method="post" action="#" class="needs-validation" novalidate
-                onsubmit="return checkForm(this);">
-                <div class="form-group">
-                    <label for="dob-input"><strong>Please select your date of birth:</strong></label>
-                    <div class="input-group">
-                        <input type="text" size="12" id="dob-input" required placeholder="DD/MM/YYYY" name="dob">
-                    </div>
-                </div>
-        </div>
-        <div class="form-group">
-            <label for="gender-input"><strong>Select your gender:</strong></label>
-            <select class="form-control" id="gender" name="gender" required>
-                <option>Male</option>
-                <option>Female</option>
-            </select>
-        </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
-        <button type="button" class="btn btn-secondary" id="clear-btn">Clear</button>
-        </form>
+	<div class="container">
+		<h2>Akan name generator</h2>
+		<p>This is a website that takes your birthday information, determines the day of the week you were born, and
+			then outputs your Akan Name based on your gender.</p>
+		<p>Fill out the details below, then click the submit button to learn what your Akan name is.</p>
+		</br>
+		<form class="form-inline" action="" onsubmit="return checkForm(this);">
+			<div class="form-group">
+				<label for="email">DOB:</label>
+				<input type="text" size="12" required placeholder="DD/MM/YYYY" name="dob">
+			</div>
+			<label for="sel1">Select Gender:</label>
+			<select class="form-control" id="gender" name="gender">
+				<option>Male</option>
+				<option> Female</option>
+			</select>
+			<button type="submit" class="btn btn-default">Submit</button>
+		</form>
+	</div>
 
-        <div id="dob-gender-output" class="content"></div>
-    </div>
-    </div>
-
-    <script src="script/Script.js">
-    </script>
+	<script src="script/script.js"></script>
 </body>
 
 </html>
