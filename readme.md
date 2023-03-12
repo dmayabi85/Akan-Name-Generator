@@ -8,7 +8,7 @@ To view the app, open the Github Pages link provided below on the README. Here i
 2.	The repository, if downloaded as a .zip file will need to be extracted on your preferred location and opened
 3.	Open the index.html file to view the application on your preferred web browser
 ## Known Bugs:
-XXX
+cannot query dates past 2023.
 ## Technologies Used:
 1.	HTML
 2.	CSS
