@@ -5,10 +5,9 @@
 	<title>Akan Name Generator</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=8">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
 	<link rel="stylesheet" href="css/style.css" media="all">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 	<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap" rel="stylesheet">
 </head>
 
@@ -19,10 +18,10 @@
 			then outputs your Akan Name based on your gender.</p>
 		<p>Fill out the details below, then click the submit button to learn what your Akan name is.</p>
 		</br>
-		<form class="form-inline" action="" onsubmit="return checkForm(this);">
+		<form class="form-inline" id="user_form" method="post">
 			<div class="form-group">
-				<label for="email">DOB:</label>
-				<input type="text" size="12" required placeholder="DD/MM/YYYY" name="dob">
+				<label for="dob">DOB:</label>
+				<input type="text" size="12" required placeholder="DD/MM/YYYY" name="dob" id="dob">
 			</div>
 			<label for="sel1">Select Gender:</label>
 			<select class="form-control" id="gender" name="gender">
@@ -31,10 +30,105 @@
 			</select>
 			<button type="submit" class="btn btn-default">Submit</button>
 		</form>
+		<hr>
+		<h4 id ="result"></h4>
 	</div>
-	<h4 id = display-name><strong>Your Akan name will be displayed below:</strong></h4>
-	<p id="result"></p>
-	<script src="script/script.js"></script>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<script>
+
+	$('#user_form').submit(function(e) {
+			e.preventDefault();
+			var dob = document.getElementById('dob').value;
+			var gender = document.getElementById('gender').value;
+	
+	  re = /^(\d{1,2})\/(\d{1,2})\/(\d{4})$/;
+		if(dob != '') {
+			if(regs = dob.match(re)) {
+				// day value between 1 and 31
+				if(regs[1] < 1 || regs[1] > 31) {
+					alert("Invalid value for day, please enter a valid day: " + regs[1]);
+					
+					return false;
+				}
+				// month value between 1 and 12
+				if(regs[2] < 1 || regs[2] > 12) {
+					alert("Invalid value for month, please enter a valid month: " + regs[2]);
+				
+					return false;
+				}
+				// year value between 1902 and 2023
+				if(regs[3] > (new Date()).getFullYear()) {
+					alert("Invalid value for year, please enter a valid year: " + regs[3] + " - must be less than or equal to  " + (new Date()).getFullYear());
+				
+					return false;
+				}
+			} else {
+				alert("Invalid date format use dd/mm/yyyy: " + dob);
+			
+				return false;
+			}
+		}
+		//alert("DOB is okay");
+		// ( ( (CC/4) -2*CC-1) + ((5*YY/4) ) + ((26*(MM+1)/10)) + DD ) mod 7
+		var gender = document.getElementById('gender').value;
+		//alert(form.gender.value);
+		
+		function farLeft(CC) {
+			return Math.floor((CC / 4) - 2 * CC - 1);
+		}
+	
+		function middle(YY) {
+			return Math.floor(5 * YY / 4);
+		}
+	
+		function farRight(MM) {
+			return Math.floor(26 * (MM + 1) / 10);
+		}
+		
+		var dateArray = dob.split("/");
+		var day = parseInt(dateArray[0]);
+		var month = parseInt(dateArray[1]);
+		var year = parseInt(dateArray[2]);
+		
+		var CC = Math.floor(year / 100);
+		var YY = year % 100;
+		
+		const farLeftResult = farLeft(CC)
+		const farRightResult = farRight(month)
+		const middleResult = middle(YY)
+		var calculationResult = (farLeftResult + middleResult + farRightResult + day) % 7
+		const wholeNumber = calculationResult.toPrecision(1);
+		 //creating arrays of Akan names for males,females and days 
+		const maleNames = ["Kwasi", "Kwadwo", "Kwabena", "Kwaku", "Yaw", "Kofi", "Kwame"];
+		const femaleNames = ["Akosua", "Adwoa", "Abenaa", "Akua", "Yaa", "Afua", "Ama"];
+	
+		
+		//alert for female and males
+		var result;
+		if(gender == "Male") {
+			result = maleNames[wholeNumber]
+		} else if(gender == "Female") {
+			result = femaleNames[wholeNumber]
+		} else {
+			alert('Enter a valid gender')
+	}
+	document.getElementById("result").textContent = `Your Akan name is: ${result}`;
+	// $('#result').html(`${result}`);
+	console.log (`Your day name is ${result}`)
+	//alert(`Your day name is ${result}`, )
+	return true;
+	
+	
+	
+		});
+	
+	
+	
+	  </script>
 </body>
+
 
 </html>
